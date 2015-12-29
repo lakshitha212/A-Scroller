@@ -4,7 +4,7 @@
 var scrollerApp = angular.module('scrollerApp', ['ngRoute']);
 scrollerApp.config(function ($routeProvider) {
     $routeProvider
-        .when('/', {
+        .when('/home', {
             templateUrl: './pages/home.html',
             controller: 'mainController'
         })
