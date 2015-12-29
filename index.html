@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="scrollerApp">
 <head lang="en">
     <meta charset="UTF-8">
     <title>A-Scroller</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
-<body>
-<h1>A-Scroller</h1>
+<!-- define angular controller -->
+<body ng-controller="mainController">
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">A-Scroller</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+            <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+        </ul>
+    </div>
+</nav>
+<div id="main">
+    <!-- angular templating -->
+    <div ng-view></div>
+</div>
+<footer class="text-center">
+    <p>All rights reserved 2015 A-Scroller</p>
+</footer>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- Latest compiled and minified Angular -->
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-route.js"></script>
+<script type="text/javascript" src="js/scroller.js"></script>
 </body>
 </html>
