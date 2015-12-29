@@ -3,19 +3,19 @@
  */
 var scrollerApp = angular.module('scrollerApp', ['ngRoute']);
 scrollerApp.config(function ($routeProvider) {
-    $routeProvider
-        .when('/home', {
-            templateUrl: './pages/home.html',
-            controller: 'mainController'
-        })
-        .when('/about', {
-            templateUrl: './pages/about.html',
-            controller: 'aboutController'
-        })
-        .when('/contact', {
-            templateUrl: './pages/contact.html',
-            controller: 'contactController'
-        });
+    $routeProvider.when('/home', {
+        title: 'A-Scroller | Home',
+        templateUrl: './pages/home.html',
+        controller: 'mainController'
+    }).when('/about', {
+        title: 'A-Scroller | About',
+        templateUrl: './pages/about.html',
+        controller: 'aboutController'
+    }).when('/contact', {
+        title: 'A-Scroller | Contact',
+        templateUrl: './pages/contact.html',
+        controller: 'contactController'
+    });
 });
 scrollerApp.controller('mainController', function ($scope) {
     $scope.message = 'Home Page';
@@ -28,3 +28,9 @@ scrollerApp.controller('aboutController', function ($scope) {
 scrollerApp.controller('contactController', function ($scope) {
     $scope.message = 'Contact Page.';
 });
+
+scrollerApp.run(['$rootScope', '$route', function ($rootScope, $route) {
+    $rootScope.$on('$routeChangeSuccess', function () {
+        document.title = $route.current.title;
+    });
+}]);
